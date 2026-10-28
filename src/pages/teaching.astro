@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHead from '../components/PageHead.astro';
+import { courses, drive } from '../data/profile';
+---
+
+<Layout title="Teaching">
+  <PageHead
+    eyebrow="Teaching & learning"
+    title="Economics, in the classroom."
+    intro="An archive of undergraduate courses and syllabi, preserved from the original academic website."
+  />
+  <section class="wrap section-bottom course-list">
+    {courses.map((course, i) => (
+      <article class="course-row">
+        <span class="paper-number">{String(i + 1).padStart(2, '0')}</span>
+        <div>
+          <p class="eyebrow">{course.school}</p>
+          <h2>{course.title}</h2>
+          <p class="small">Undergraduate · Syllabi</p>
+          <div class="syllabi">
+            {course.links.map(([term, id, key]) => (
+              <a href={drive(id) + (key ? `&resourcekey=${key}` : '')}>
+                {term} <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </article>
+    ))}
+    <p class="source-note">
+      These are historical course materials, not a current teaching schedule.{' '}
+      <a href="https://sites.google.com/view/ibraheemcatovic/teaching">
+        Original teaching page ↗
+      </a>
+    </p>
+  </section>
+</Layout>

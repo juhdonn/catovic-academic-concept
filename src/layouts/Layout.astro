@@ -1,0 +1,126 @@
+---
+import '@fontsource/dm-sans/400.css';
+import '@fontsource/dm-sans/500.css';
+import '@fontsource/dm-sans/600.css';
+import '@fontsource/newsreader/400.css';
+import '@fontsource/newsreader/400-italic.css';
+import '../styles/global.css';
+import { profile } from '../data/profile';
+interface Props {
+  title: string;
+  description?: string;
+}
+const {
+  title,
+  description = 'Research, teaching, and academic background of Ibraheem Catovic. An unofficial portfolio design concept by Academic Web Studio.',
+} = Astro.props;
+const links = [
+  ['/', 'Overview'],
+  ['/research/', 'Research'],
+  ['/teaching/', 'Teaching'],
+  ['/about/', 'About'],
+  ['/contact/', 'Contact'],
+];
+const path = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="theme-color" content="#233f35" />
+    <meta property="og:title" content={`${title} · Ibraheem Catovic`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title} · Ibraheem Catovic</title>
+  </head>
+  <body>
+    <a class="skip" href="#main">
+      Skip to content
+    </a>
+    <div class="concept-bar">
+      <span class="concept-dot"></span> An unofficial design concept{' '}
+      <span class="concept-studio">by Academic Web Studio</span>
+      <a href="/about/#concept">
+        About this demo <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <header class="site-header wrap">
+      <a href="/" class="wordmark" aria-label="Ibraheem Catovic home">
+        Ibraheem Catovic<span>Economics & human behavior</span>
+      </a>
+      <button
+        class="menu-toggle"
+        aria-controls="main-nav"
+        aria-expanded="false"
+      >
+        Menu <span aria-hidden="true">＋</span>
+      </button>
+      <nav id="main-nav" aria-label="Main navigation">
+        {links.map(([href, label]) => (
+          <a href={href} aria-current={path === href ? 'page' : undefined}>
+            {label}
+          </a>
+        ))}
+        <a class="nav-cv" href="/cv/">
+          CV <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <footer class="site-footer wrap">
+      <div class="footer-top">
+        <a class="wordmark" href="/">
+          Ibraheem Catovic<span>Economics & human behavior</span>
+        </a>
+        <p>
+          Understanding the choices
+          <br />
+          that shape our world.
+        </p>
+        <a class="text-link" href={`mailto:${profile.email}`}>
+          Get in touch <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          Unofficial design concept. Not affiliated with or endorsed by Ibraheem
+          Catovic or NYU.
+        </p>
+        <a href="/sources/">Sources & verification</a>
+        <span>Academic Web Studio · 2026</span>
+      </div>
+    </footer>
+    <script>
+      const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+      const nav = document.querySelector<HTMLElement>('#main-nav');
+      const close = () => {
+        toggle?.setAttribute('aria-expanded', 'false');
+        nav?.classList.remove('is-open');
+      };
+      toggle?.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        nav?.classList.toggle('is-open', !expanded);
+      });
+      document.addEventListener('keydown', (e) => {
+        if (
+          e.key === 'Escape' &&
+          toggle?.getAttribute('aria-expanded') === 'true'
+        ) {
+          close();
+          toggle?.focus();
+        }
+      });
+      nav
+        ?.querySelectorAll('a')
+        .forEach((a) => a.addEventListener('click', close));
+    </script>
+  </body>
+</html>

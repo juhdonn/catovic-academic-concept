@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHead from '../components/PageHead.astro';
+import { profile } from '../data/profile';
+---
+
+<Layout title="Sources & verification">
+  <PageHead
+    eyebrow="Editorial transparency"
+    title="Grounded in public sources."
+    intro="A record of the materials used for this unofficial design concept, reviewed October 28, 2026."
+  />
+  <div class="wrap narrow sources-content section-bottom">
+    <h2>Primary materials</h2>
+    <ol>
+      <li>
+        <a href={profile.original}>Personal website · Home</a>: name,
+        appointment, professional email, interests, and homepage CV link.
+      </li>
+      <li>
+        <a href="https://sites.google.com/view/ibraheemcatovic/research">
+          Personal website · Research
+        </a>
+        : all ten titles, stated publication statuses, coauthorship, paper
+        links, and the alternate CV.
+      </li>
+      <li>
+        <a href="https://sites.google.com/view/ibraheemcatovic/teaching">
+          Personal website · Teaching
+        </a>
+        : all seven courses and 23 syllabus links, preserved in this concept.
+      </li>
+      <li>
+        <a href={profile.cv}>Homepage CV · August 2025</a>: education,
+        employment history, professional address, and LinkedIn link.
+      </li>
+      <li>
+        <a href="https://doi.org/10.1017/esa.2025.10026">
+          Cambridge University Press · Distribution-dependent number preferences
+        </a>
+        : author, abstract, journal, 2025 volume and page range. The short
+        overview on this concept is an editorial paraphrase of its abstract.
+      </li>
+      <li>
+        <a href="https://bulletins.nyu.edu/nyu/faculty-information/faculty-information.pdf">
+          NYU faculty bulletin
+        </a>
+        : lists Visiting Clinical Assistant Professor, Economics, and University
+        of Maryland Ph.D.
+      </li>
+      <li>
+        <a href="https://economics.sas.rutgers.edu/people/faculty/people/86-faculty/1212-catovic-ibraheem">
+          Rutgers faculty listing
+        </a>
+        : also lists Lecturer (Instructor). Its currency and overlap with NYU
+        are unclear; it is not presented here as a current appointment.
+      </li>
+      <li>
+        <a href="https://api.drum.lib.umd.edu/server/api/core/bitstreams/509cafbf-0538-40e8-8e60-2508cddc1ce7/content">
+          University of Maryland dissertation repository
+        </a>
+        : corroborates the 2021 Ph.D. and dissertation,{' '}
+        <em>Essays on Decision Making Over Risk</em>.
+      </li>
+    </ol>
+    <h2>What remains uncertain</h2>
+    <ul>
+      <li>
+        The current appointment end date has not been independently confirmed.
+        The personal site lists NYU, while the August 2025 CV gives September
+        2023–Present.
+      </li>
+      <li>
+        The homepage and research page link different CV files. The homepage
+        version is used as the primary CV; both remain accessible.
+      </li>
+      <li>
+        The original link for “What Determines Lotto Demand? Mega Millions, Hope
+        and Regret” opens a draft of “Distribution-Dependent Number
+        Preferences.” It is preserved with an explicit mismatch note; the
+        correct file remains unconfirmed.
+      </li>
+      <li>
+        The 2014 banking article is listed on the original site without a link.
+        This concept does not invent a DOI or download.
+      </li>
+      <li>
+        “Under review” is a readable rendering of the original site's “peer
+        review” label, not independent confirmation of editorial status.
+      </li>
+      <li>
+        The postal code 10002 follows the CV verbatim and should be confirmed
+        before use.
+      </li>
+      <li>
+        Paper subject groupings and introductory copy are editorial choices. No
+        inferred paper abstracts, new academic claims, or synthetic portrait are
+        used.
+      </li>
+    </ul>
+    <h2>Independent design concept</h2>
+    <p>
+      Created by Academic Web Studio. This website is not affiliated with or
+      endorsed by Professor Ibraheem Catovic or NYU. Research documents remain
+      on their original hosts. No contact form transmits data, and this local
+      demo includes no analytics. Search engines are instructed not to index the
+      concept; these instructions do not make a hosted website private.
+    </p>
+  </div>
+</Layout>

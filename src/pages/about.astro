@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHead from '../components/PageHead.astro';
+import { profile } from '../data/profile';
+---
+
+<Layout title="About">
+  <PageHead
+    eyebrow="About Ibraheem"
+    title="An interdisciplinary perspective."
+    intro="An economist interested in improving our understanding of human choice behavior."
+  />
+  <div class="wrap about-grid section-bottom">
+    <aside class="profile-aside">
+      <div class="monogram" aria-hidden="true">
+        ic.
+      </div>
+      <h2>Ibraheem Catovic</h2>
+      <p>
+        {profile.title}
+        <br />
+        {profile.department}
+        <br />
+        {profile.institution}
+      </p>
+      <a class="text-link" href="/cv/">
+        Curriculum vitae <span aria-hidden="true">↗</span>
+      </a>
+    </aside>
+    <div class="about-main">
+      <section>
+        <p class="eyebrow">Research perspective</p>
+        <h2>
+          Connecting disciplines.
+          <br />
+          Understanding decisions.
+        </h2>
+        <p>
+          Ibraheem Catovic is a Ph.D. economist whose stated interests span
+          behavioral economics, experimental economics, neuroeconomics,
+          psychology, philosophy, and religion.
+        </p>
+        <p>
+          His work includes research on lottery choice and number preferences,
+          prize linked savings, and working papers on justice, moral luck, and
+          religious belief. His personal website lists an appointment as
+          Visiting Clinical Assistant Professor in NYU’s Department of
+          Economics.
+        </p>
+        <div class="tags">
+          {profile.interests.map((interest) => (
+            <span>{interest}</span>
+          ))}
+        </div>
+      </section>
+      <section>
+        <p class="eyebrow">Education</p>
+        {profile.education.map((item) => (
+          <div class="timeline-row">
+            <span>{item.year}</span>
+            <div>
+              <h3>{item.degree}</h3>
+              <p>{item.school}</p>
+              {item.note && <p class="small">{item.note}</p>}
+            </div>
+          </div>
+        ))}
+      </section>
+      <section>
+        <p class="eyebrow">Professional background</p>
+        {profile.experience.map((item) => (
+          <div class="timeline-row">
+            <span>{item.period}</span>
+            <div>
+              <h3>{item.role}</h3>
+              <p>{item.place}</p>
+            </div>
+          </div>
+        ))}
+        <p class="small">
+          ¹ “Present” follows the August 2025 CV; the personal website and NYU
+          bulletin also list this appointment. Current appointment dates should
+          be reconfirmed before an official launch.
+        </p>
+      </section>
+    </div>
+  </div>
+  <section class="concept-section" id="concept">
+    <div class="wrap narrow">
+      <p class="eyebrow">About this concept</p>
+      <h2>
+        A considered new home
+        <br />
+        for academic work.
+      </h2>
+      <p>
+        This is an independent, unofficial design concept created by Academic
+        Web Studio, a student-run studio founded by two NYU students. It is not
+        affiliated with or endorsed by Professor Ibraheem Catovic or New York
+        University.
+      </p>
+      <p>
+        All academic information is drawn from public sources. The illustration
+        is an abstract design element, not a research figure. No photograph,
+        testimonial, or endorsement is implied.
+      </p>
+      <a class="text-link" href="/sources/">
+        Review source materials <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+</Layout>

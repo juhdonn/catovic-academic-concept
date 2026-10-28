@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHead from '../components/PageHead.astro';
+import PaperRow from '../components/PaperRow.astro';
+import { papers } from '../data/profile';
+---
+
+<Layout
+  title="Research"
+  description="Publications and working papers by Ibraheem Catovic in economics, philosophy, and religion. Unofficial design concept."
+>
+  <PageHead
+    eyebrow="Research & writing"
+    title="Questions worth pursuing."
+    intro="Publications and work in progress, from decision-making under risk to questions of justice and belief."
+  />
+  <section class="wrap research-index section-bottom">
+    <div class="research-controls">
+      <div
+        class="filter-buttons"
+        role="group"
+        aria-label="Filter research by subject"
+      >
+        <button aria-pressed="true" data-filter="All">
+          All work <span>10</span>
+        </button>
+        <button aria-pressed="false" data-filter="Economics">
+          Economics
+        </button>
+        <button aria-pressed="false" data-filter="Philosophy & religion">
+          Philosophy & religion
+        </button>
+      </div>
+      <label class="search-label">
+        <span class="sr-only">Search research titles</span>
+        <input
+          type="search"
+          placeholder="Search titles…"
+          id="paper-search"
+          autocomplete="off"
+        />
+        <span aria-hidden="true">⌕</span>
+      </label>
+    </div>
+    <p class="results-count small" aria-live="polite" id="results-count">
+      10 works
+    </p>
+    <h2 class="sr-only">Publications and working papers</h2>
+    <div id="paper-list">
+      {papers.map((paper, i) => (
+        <PaperRow paper={paper} number={i + 1} />
+      ))}
+    </div>
+    <p id="no-results" hidden>
+      No matching work. Try another title or subject.
+    </p>
+    <p class="source-note">
+      Paper titles, coauthorship, and statuses follow the original research
+      page. “Under review” reflects its label “peer review” and has not been
+      independently confirmed. Subject groupings are editorial.{' '}
+      <a href="/sources/">View sources and verification notes ↗</a>
+    </p>
+  </section>
+  <script>
+    const buttons =
+      document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+    const search = document.querySelector<HTMLInputElement>('#paper-search');
+    const rows = document.querySelectorAll<HTMLElement>('.paper-row');
+    let active = 'All';
+    function filter() {
+      let count = 0;
+      const q = search?.value.trim().toLowerCase() ?? '';
+      rows.forEach((row) => {
+        const visible =
+          (active === 'All' || row.dataset.area === active) &&
+          (row.dataset.title ?? '').includes(q);
+        row.hidden = !visible;
+        if (visible) count++;
+      });
+      const result = document.querySelector('#results-count');
+      if (result)
+        result.textContent = `${count} ${count === 1 ? 'work' : 'works'}`;
+      const empty = document.querySelector<HTMLElement>('#no-results');
+      if (empty) empty.hidden = count > 0;
+    }
+    buttons.forEach((button) =>
+      button.addEventListener('click', () => {
+        active = button.dataset.filter ?? 'All';
+        buttons.forEach((b) =>
+          b.setAttribute('aria-pressed', String(b === button)),
+        );
+        filter();
+      }),
+    );
+    search?.addEventListener('input', filter);
+  </script>
+</Layout>

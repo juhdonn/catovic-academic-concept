@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHead from '../components/PageHead.astro';
+import { profile } from '../data/profile';
+---
+
+<Layout title="Contact">
+  <PageHead
+    eyebrow="Contact & connections"
+    title="An open exchange of ideas."
+    intro="Professional contact information and academic links, as listed in public source materials."
+  />
+  <section class="wrap contact-grid section-bottom">
+    <div class="email-panel">
+      <p class="eyebrow">Email</p>
+      <a class="email-address" href={`mailto:${profile.email}`}>
+        ibraheem.catovic
+        <br />
+        @nyu.edu <span aria-hidden="true">↗</span>
+      </a>
+      <p>Opens your email application.</p>
+      <button class="copy-email" data-email={profile.email}>
+        Copy email address <span aria-hidden="true">⧉</span>
+      </button>
+      <p id="copy-status" class="small" role="status"></p>
+    </div>
+    <div class="contact-details">
+      <p class="eyebrow">Department</p>
+      <h2>New York University</h2>
+      <p>
+        Department of Economics
+        <br />
+        19 West 4th Street
+        <br />
+        New York, NY 10002
+      </p>
+      <p class="small">
+        Mailing address as printed in the August 2025 CV. Confirm before sending
+        mail or visiting.
+      </p>
+      <div class="contact-links">
+        <a href={profile.original}>
+          Original academic website <span aria-hidden="true">↗</span>
+        </a>
+        <a href={profile.linkedin}>
+          LinkedIn · linked in CV <span aria-hidden="true">↗</span>
+        </a>
+        <a href="/cv/">
+          Curriculum vitae <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+<script>
+  const button = document.querySelector<HTMLButtonElement>('.copy-email');
+  button?.addEventListener('click', async () => {
+    const status = document.querySelector('#copy-status');
+    try {
+      await navigator.clipboard.writeText(button.dataset.email ?? '');
+      if (status) status.textContent = 'Email address copied.';
+    } catch {
+      if (status)
+        status.textContent =
+          'Copy unavailable. Select the email above, or use the email link.';
+    }
+  });
+</script>

@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHead from '../components/PageHead.astro';
+---
+
+<Layout title="Page not found">
+  <PageHead eyebrow="404 · Page not found" title="A different path.">
+    <p class="page-intro">
+      The page you’re looking for isn’t here. Explore the research or return to
+      the overview.
+    </p>
+    <a class="button" href="/">
+      Return to overview <span aria-hidden="true">→</span>
+    </a>
+  </PageHead>
+</Layout>

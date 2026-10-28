@@ -1,0 +1,68 @@
+---
+import type { Paper } from '../data/profile';
+interface Props {
+  paper: Paper;
+  number?: number;
+}
+const { paper, number } = Astro.props;
+---
+
+<article
+  class="paper-row"
+  data-area={paper.area}
+  data-status={paper.status}
+  data-title={paper.title.toLowerCase()}
+  id={paper.id}
+>
+  <div class="paper-number" aria-hidden="true">
+    {String(number ?? 1).padStart(2, '0')}
+  </div>
+  <div class="paper-content">
+    <div class="paper-meta">
+      <span
+        class:list={['status', { published: paper.status === 'Published' }]}
+      >
+        {paper.status}
+      </span>
+      <span>{paper.year ?? paper.area}</span>
+    </div>
+    <h3>
+      {paper.url && !paper.linkNote ? (
+        <a href={paper.url}>
+          {paper.title}
+          <span class="paper-arrow" aria-hidden="true">
+            ↗
+          </span>
+        </a>
+      ) : (
+        paper.title
+      )}
+    </h3>
+    {paper.coauthors && <p class="paper-venue">{paper.coauthors}</p>}
+    {paper.venue && <p class="paper-venue">{paper.venue}</p>}
+    {paper.summary && (
+      <details>
+        <summary>
+          Read overview <span aria-hidden="true">＋</span>
+        </summary>
+        <p>{paper.summary}</p>
+        <p class="small">Editorial summary based on the published abstract.</p>
+      </details>
+    )}
+    {paper.linkNote && (
+      <p class="link-note">
+        {paper.linkNote} <a href={paper.url}>View original linked file ↗</a>
+      </p>
+    )}
+    {!paper.url && (
+      <p class="small">
+        Listed on the original research page; no paper link supplied.
+      </p>
+    )}
+  </div>
+  {paper.url && !paper.linkNote && (
+    <a class="paper-open" href={paper.url} aria-label={`Read ${paper.title}`}>
+      <span aria-hidden="true">↗</span>
+    </a>
+  )}
+</article>
