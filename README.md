@@ -2,7 +2,13 @@
 
 A complete static Astro + TypeScript website by Academic Web Studio. Warm paper, forest green, self-hosted Newsreader and DM Sans, an original vector illustration, responsive editorial layouts, and reusable academic content components.
 
-**Unofficial design concept. Not affiliated with or endorsed by Professor Catovic or NYU. No public deployment or outreach has been performed.**
+**Unofficial design concept. Not affiliated with or endorsed by Professor Catovic or NYU. Published with the founders’ approval as a public review demo. No professor outreach has been performed.**
+
+## Online review demo
+
+https://academic-web-studio-catovic-demo.netlify.app/
+
+Source: https://github.com/juhdonn/catovic-academic-concept (private). Netlify Free builds and deploys `main` automatically. The website is public; the GitHub repository remains private. See `DEPLOYMENT.md` for the live deployment record and update instructions.
 
 ## Run locally
 
