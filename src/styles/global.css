@@ -171,14 +171,6 @@ nav a:hover {
 .menu-toggle {
   display: none;
 }
-.hero {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 80px;
-  padding-top: 72px;
-  padding-bottom: 64px;
-  align-items: center;
-}
 .eyebrow {
   text-transform: uppercase;
   font-size: 10px;
@@ -186,35 +178,6 @@ nav a:hover {
   font-weight: 600;
   color: #59694c;
   margin-bottom: 24px;
-}
-.hero .eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  letter-spacing: 0.12em;
-}
-.little-rule {
-  width: 25px;
-  height: 1px;
-  background: #72845e;
-}
-.hero h1 {
-  font-size: clamp(60px, 6.5vw, 96px);
-  line-height: 0.98;
-}
-.hero h1 em {
-  color: #60724c;
-}
-.hero-description {
-  font-size: 16px;
-  line-height: 1.8;
-  max-width: 390px;
-  margin: 26px 0 28px;
-}
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 27px;
 }
 .button {
   display: inline-flex;
@@ -248,82 +211,6 @@ nav a:hover {
   color: #637a4d;
   border-color: currentColor;
 }
-.appointment {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  margin-top: 45px;
-  padding-top: 23px;
-  border-top: 1px solid var(--line);
-  max-width: 420px;
-}
-.appointment-mark {
-  font: italic 29px var(--serif);
-  width: 45px;
-  height: 45px;
-  display: grid;
-  place-items: center;
-  border: 1px solid #aebba5;
-  border-radius: 50%;
-}
-.appointment strong {
-  font-size: 11px;
-  font-weight: 500;
-  display: block;
-}
-.appointment div > span {
-  display: block;
-  font-size: 10px;
-  color: var(--muted);
-  margin-top: 3px;
-}
-.choice-art {
-  margin: 0;
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.choice-art svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.choice-art figcaption {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  font-size: 8px;
-  color: var(--muted);
-  margin-top: 15px;
-}
-.choice-art figcaption span:first-child {
-  letter-spacing: 0.13em;
-}
-.interests-band {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.interests-inner {
-  display: flex;
-  gap: 55px;
-  align-items: center;
-  padding-block: 23px;
-}
-.interests-inner .eyebrow {
-  margin: 0;
-  white-space: nowrap;
-  font-size: 9px;
-}
-.interests-inner p {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 20px;
-}
-.interests-inner p span {
-  margin-inline: 23px;
-  color: #879275;
-}
 .section {
   padding-block: 88px;
 }
@@ -336,15 +223,6 @@ nav a:hover {
 }
 .section-head .eyebrow {
   margin-bottom: 18px;
-}
-.section-aside {
-  max-width: 330px;
-  font-size: 13px;
-  line-height: 1.9;
-  padding-bottom: 4px;
-}
-.section-aside .text-link {
-  margin-top: 5px;
 }
 .paper-row {
   display: grid;
@@ -445,40 +323,6 @@ details[open] summary span {
 details p {
   line-height: 1.85;
   margin-top: 14px;
-}
-.teaching-feature {
-  background: #e9ecdf;
-  padding-block: 65px;
-}
-.teaching-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 100px;
-  align-items: center;
-}
-.teaching-grid p:not(.eyebrow) {
-  font-size: 14px;
-  line-height: 1.9;
-  max-width: 420px;
-}
-.teaching-grid .eyebrow {
-  margin-bottom: 18px;
-}
-.contact-strip {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
-  align-items: center;
-  gap: 30px;
-  padding-block: 80px;
-}
-.contact-strip .eyebrow {
-  margin: 0;
-}
-.contact-strip h2 {
-  font-size: 46px;
-}
-.contact-strip .text-link {
-  justify-self: end;
 }
 .site-footer {
   border-top: 1px solid var(--line);
@@ -610,16 +454,6 @@ details p {
   border-top: 1px solid var(--line);
   padding-top: 25px;
 }
-.monogram {
-  width: 180px;
-  height: 190px;
-  background: var(--sage);
-  font: italic 100px var(--serif);
-  display: grid;
-  place-items: center;
-  color: #536c4d;
-  margin-bottom: 30px;
-}
 .profile-aside h2 {
   font-size: 29px;
 }
@@ -715,46 +549,6 @@ details p {
   grid-template-columns: 1fr 1fr;
   gap: 90px;
   align-items: center;
-}
-.cv-document {
-  background: var(--sage);
-  padding: 48px 60px;
-  overflow: hidden;
-  max-height: 450px;
-}
-.cv-paper {
-  max-width: 290px;
-  margin: auto;
-  padding: 30px;
-  background: #fff;
-  box-shadow: 0 15px 35px #2a3c2a13;
-  transform: rotate(-4deg);
-  min-height: 370px;
-  font-family: Georgia, serif;
-}
-.cv-paper span {
-  font-size: 19px;
-}
-.cv-paper hr {
-  margin-block: 17px;
-  border: 0;
-  border-top: 1px solid #ccc;
-}
-.cv-paper i {
-  display: block;
-  height: 3px;
-  background: #d9dfd5;
-  margin: 11px 0;
-  width: 95%;
-}
-.cv-paper i:nth-child(3n) {
-  width: 70%;
-}
-.cv-paper b {
-  display: block;
-  font-size: 14px;
-  font-weight: 400;
-  margin-top: 22px;
 }
 .cv-details {
   max-width: 440px;
@@ -887,27 +681,6 @@ details p {
 main:focus {
   outline: none;
 }
-@media (min-width: 1000px) {
-  .hero-copy {
-    animation: arrive 0.7s ease both;
-  }
-  .choice-art {
-    animation: arrive 0.9s ease both;
-  }
-  @keyframes arrive {
-    from {
-      transform: translateY(8px);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-}
-@media (min-width: 1500px) {
-  .hero {
-    gap: 110px;
-  }
-}
 @media (max-width: 1100px) {
   .wrap {
     width: calc(100% - 72px);
@@ -918,28 +691,6 @@ main:focus {
   nav {
     gap: 21px;
   }
-  .hero {
-    gap: 40px;
-    padding-top: 56px;
-  }
-  .hero h1 {
-    font-size: 70px;
-  }
-  .hero-description {
-    font-size: 14px;
-  }
-  .hero-actions {
-    gap: 18px;
-  }
-  .interests-inner {
-    gap: 30px;
-  }
-  .interests-inner p {
-    font-size: 18px;
-  }
-  .interests-inner p span {
-    margin-inline: 12px;
-  }
   .about-grid {
     gap: 50px;
     grid-template-columns: 240px 1fr;
@@ -949,12 +700,6 @@ main:focus {
   }
   .cv-section {
     gap: 50px;
-  }
-  .contact-strip {
-    grid-template-columns: 1fr 1.3fr 1fr;
-  }
-  .contact-strip h2 {
-    font-size: 40px;
   }
   .footer-bottom {
     font-size: 8px;
@@ -1019,81 +764,11 @@ main:focus {
     margin-top: 8px;
     padding-left: 0;
   }
-  .hero {
-    gap: 30px;
-    grid-template-columns: 1.15fr 1fr;
-    padding-block: 45px;
-  }
-  .hero h1 {
-    font-size: 59px;
-  }
-  .hero .eyebrow {
-    font-size: 8px;
-    letter-spacing: 0.08em;
-    gap: 8px;
-  }
-  .little-rule {
-    width: 12px;
-  }
-  .hero-actions {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
-  }
-  .appointment {
-    margin-top: 28px;
-  }
-  .appointment strong {
-    font-size: 10px;
-  }
-  .appointment div > span {
-    font-size: 9px;
-  }
-  .appointment-mark {
-    display: none;
-  }
-  .hero-description {
-    margin-top: 21px;
-  }
-  .choice-art figcaption {
-    font-size: 7px;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .interests-inner {
-    display: block;
-    padding-block: 20px;
-  }
-  .interests-inner .eyebrow {
-    margin-bottom: 10px;
-  }
-  .interests-inner p {
-    font-size: 18px;
-  }
   .section {
     padding-block: 62px;
   }
   .section-head {
     gap: 30px;
-  }
-  .section-aside {
-    max-width: 270px;
-    font-size: 12px;
-  }
-  .teaching-grid {
-    gap: 40px;
-    grid-template-columns: 1fr 1fr;
-  }
-  .teaching-grid p:not(.eyebrow) {
-    font-size: 13px;
-  }
-  .contact-strip {
-    grid-template-columns: 1fr 1.5fr;
-    padding-block: 55px;
-  }
-  .contact-strip .text-link {
-    grid-column: 2;
-    justify-self: start;
   }
   .footer-bottom {
     flex-wrap: wrap;
@@ -1125,10 +800,6 @@ main:focus {
     grid-template-columns: 200px 1fr;
     gap: 32px;
   }
-  .monogram {
-    width: 150px;
-    height: 160px;
-  }
   .about-main h2 {
     font-size: 34px;
   }
@@ -1148,9 +819,6 @@ main:focus {
   }
   .cv-section {
     gap: 35px;
-  }
-  .cv-document {
-    padding: 35px 25px;
   }
   .contact-grid {
     gap: 35px;
@@ -1182,75 +850,10 @@ main:focus {
   .wordmark span {
     font-size: 8px;
   }
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    padding-top: 38px;
-    gap: 34px;
-    padding-bottom: 34px;
-  }
-  .hero h1 {
-    font-size: clamp(59px, 14vw, 78px);
-  }
-  .hero .eyebrow {
-    font-size: 8px;
-    margin-bottom: 25px;
-  }
-  .hero-description {
-    font-size: 14px;
-    max-width: 340px;
-    margin-top: 22px;
-  }
-  .hero-actions {
-    flex-direction: row;
-    align-items: center;
-    gap: 24px;
-  }
-  .hero-actions .text-link {
-    font-size: 11px;
-    gap: 12px;
-  }
   .button {
     font-size: 11px;
     padding: 13px 16px;
     gap: 25px;
-  }
-  .appointment {
-    max-width: none;
-    margin-top: 30px;
-    padding-top: 20px;
-  }
-  .appointment-mark {
-    display: grid;
-    width: 39px;
-    height: 39px;
-    font-size: 25px;
-  }
-  .appointment strong {
-    font-size: 10px;
-  }
-  .appointment div > span {
-    font-size: 9px;
-  }
-  .choice-art {
-    align-self: auto;
-  }
-  .choice-art svg {
-    max-height: 350px;
-    background: #e7e9df;
-  }
-  .choice-art figcaption {
-    flex-direction: row;
-    font-size: 7px;
-    margin-top: 10px;
-  }
-  .interests-inner p {
-    font-size: 16px;
-    line-height: 1.8;
-  }
-  .interests-inner p span {
-    margin-inline: 7px;
   }
   .section-head {
     display: block;
@@ -1258,13 +861,6 @@ main:focus {
   }
   .section-head h2 {
     font-size: 39px;
-  }
-  .section-aside {
-    max-width: 100%;
-    margin-top: 25px;
-  }
-  .section-aside p {
-    max-width: 340px;
   }
   .paper-row {
     grid-template-columns: 23px 1fr;
@@ -1295,27 +891,6 @@ main:focus {
   .paper-venue {
     font-size: 10px;
     line-height: 1.7;
-  }
-  .teaching-feature {
-    padding-block: 45px;
-  }
-  .teaching-grid {
-    grid-template-columns: 1fr;
-    gap: 26px;
-  }
-  .teaching-grid h2 {
-    font-size: 39px;
-  }
-  .contact-strip {
-    display: block;
-    padding-block: 50px;
-  }
-  .contact-strip .eyebrow {
-    margin-bottom: 23px;
-  }
-  .contact-strip h2 {
-    font-size: 44px;
-    margin-bottom: 25px;
   }
   .footer-top {
     flex-wrap: wrap;
@@ -1423,13 +998,6 @@ main:focus {
     grid-template-columns: 1fr;
     gap: 35px;
   }
-  .cv-document {
-    max-height: 330px;
-    padding: 35px 40px;
-  }
-  .cv-paper {
-    max-width: 250px;
-  }
   .cv-details h2 {
     font-size: 41px;
   }
@@ -1475,9 +1043,6 @@ main:focus {
   color: var(--muted);
 }
 @media (max-width: 580px) {
-  .hero h1 {
-    font-size: clamp(48px, 15.1vw, 78px);
-  }
   .email-address {
     font-size: clamp(31px, 11vw, 43px);
   }
@@ -1496,15 +1061,6 @@ main:focus {
     gap: 10px;
     padding: 8px 10px;
   }
-  .hero-actions {
-    gap: 16px;
-  }
-  .hero-actions .text-link {
-    font-size: 10px;
-  }
-  .appointment div > span {
-    font-size: 8px;
-  }
   .timeline-row {
     grid-template-columns: 72px 1fr;
     gap: 13px;
@@ -1518,5 +1074,225 @@ main:focus {
   }
   .email-panel {
     padding: 24px;
+  }
+}
+
+/* Restrained academic presentation: content, typography, and simple rules. */
+.academic-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
+  gap: 96px;
+  align-items: end;
+  padding-block: 88px 72px;
+}
+.academic-intro h1 {
+  font-size: clamp(50px, 5.9vw, 80px);
+  line-height: 1.04;
+}
+.academic-position {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 24px 0;
+}
+.academic-summary {
+  max-width: 560px;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 26px;
+}
+.intro-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 26px;
+  font-size: 13px;
+}
+.intro-interests {
+  border-left: 1px solid var(--line);
+  padding-left: 32px;
+  padding-bottom: 4px;
+}
+.intro-interests h2 {
+  font: 500 12px var(--sans);
+  letter-spacing: 0;
+  margin-bottom: 17px;
+}
+.intro-interests ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.intro-interests li {
+  font: 24px/1.65 var(--serif);
+  letter-spacing: -0.015em;
+}
+.selected-research {
+  padding-top: 0;
+  padding-bottom: 58px;
+}
+.selected-research .section-head {
+  align-items: center;
+  margin-bottom: 28px;
+}
+.selected-research h2,
+.teaching-summary h2 {
+  font-size: 38px;
+}
+.teaching-summary {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  padding-block: 0 64px;
+}
+.teaching-summary p {
+  max-width: 650px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.page-head h1 {
+  font-size: clamp(44px, 5vw, 66px);
+}
+.page-head {
+  padding-top: 62px;
+  padding-bottom: 38px;
+}
+.page-intro {
+  font-size: 15px;
+  margin-top: 17px;
+}
+.cv-section {
+  display: block;
+}
+.cv-details {
+  max-width: 640px;
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+}
+.cv-details h2 {
+  font-size: 32px;
+}
+.email-panel {
+  background: transparent;
+  padding-left: 0;
+  border-top: 1px solid var(--line);
+}
+.contact-details {
+  border-top: 1px solid var(--line);
+}
+.profile-aside {
+  padding-top: 24px;
+}
+.about-main h2,
+.concept-section h2 {
+  font-size: 34px;
+}
+.concept-section {
+  background: transparent;
+  border-top: 1px solid var(--line);
+  padding-block: 48px;
+}
+.status.published {
+  background: transparent;
+  padding: 0;
+}
+.footer-top {
+  padding-bottom: 28px;
+}
+.footer-top .text-link {
+  font-size: 12px;
+}
+.button {
+  transition: background 0.2s;
+}
+.button:hover {
+  transform: none;
+}
+@media (max-width: 900px) {
+  .academic-intro {
+    gap: 48px;
+    grid-template-columns: minmax(0, 1.6fr) minmax(190px, 1fr);
+  }
+  .intro-interests {
+    padding-left: 24px;
+  }
+  .intro-interests li {
+    font-size: 21px;
+  }
+  .teaching-summary {
+    gap: 40px;
+  }
+}
+@media (max-width: 650px) {
+  .academic-intro {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-block: 44px;
+  }
+  .academic-intro h1 {
+    font-size: clamp(44px, 11vw, 64px);
+  }
+  .academic-position {
+    font-size: 13px;
+    margin-block: 18px;
+  }
+  .academic-summary {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .intro-links {
+    font-size: 12px;
+    gap: 11px 22px;
+  }
+  .intro-interests {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 24px 0 0;
+  }
+  .intro-interests ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+  }
+  .intro-interests li {
+    font-size: 18px;
+  }
+  .intro-interests h2 {
+    margin-bottom: 12px;
+  }
+  .selected-research {
+    padding-block: 0 36px;
+  }
+  .selected-research .section-head {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 22px;
+  }
+  .selected-research h2,
+  .teaching-summary h2 {
+    font-size: 31px;
+  }
+  .selected-research .text-link {
+    font-size: 11px;
+    white-space: nowrap;
+    gap: 12px;
+  }
+  .teaching-summary {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-bottom: 44px;
+  }
+  .page-head {
+    padding-top: 40px;
+    padding-bottom: 28px;
+  }
+  .page-head h1 {
+    font-size: 46px;
+  }
+  .footer-top {
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .email-panel {
+    padding-left: 0;
   }
 }

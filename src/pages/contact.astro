@@ -5,11 +5,7 @@ import { profile } from '../data/profile';
 ---
 
 <Layout title="Contact">
-  <PageHead
-    eyebrow="Contact & connections"
-    title="An open exchange of ideas."
-    intro="Professional contact information and academic links, as listed in public source materials."
-  />
+  <PageHead title="Contact" intro="Professional contact information." />
   <section class="wrap contact-grid section-bottom">
     <div class="email-panel">
       <p class="eyebrow">Email</p>
@@ -18,7 +14,6 @@ import { profile } from '../data/profile';
         <br />
         @nyu.edu <span aria-hidden="true">↗</span>
       </a>
-      <p>Opens your email application.</p>
       <button class="copy-email" data-email={profile.email}>
         Copy email address <span aria-hidden="true">⧉</span>
       </button>

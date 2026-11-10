@@ -3,7 +3,6 @@ import '@fontsource/dm-sans/400.css';
 import '@fontsource/dm-sans/500.css';
 import '@fontsource/dm-sans/600.css';
 import '@fontsource/newsreader/400.css';
-import '@fontsource/newsreader/400-italic.css';
 import '../styles/global.css';
 import { profile } from '../data/profile';
 interface Props {
@@ -51,7 +50,7 @@ const path = Astro.url.pathname;
     </div>
     <header class="site-header wrap">
       <a href="/" class="wordmark" aria-label="Ibraheem Catovic home">
-        Ibraheem Catovic<span>Economics & human behavior</span>
+        Ibraheem Catovic<span>Economics</span>
       </a>
       <button
         class="menu-toggle"
@@ -67,7 +66,7 @@ const path = Astro.url.pathname;
           </a>
         ))}
         <a class="nav-cv" href="/cv/">
-          CV <span aria-hidden="true">↗</span>
+          CV
         </a>
       </nav>
     </header>
@@ -77,15 +76,10 @@ const path = Astro.url.pathname;
     <footer class="site-footer wrap">
       <div class="footer-top">
         <a class="wordmark" href="/">
-          Ibraheem Catovic<span>Economics & human behavior</span>
+          Ibraheem Catovic<span>Economics</span>
         </a>
-        <p>
-          Understanding the choices
-          <br />
-          that shape our world.
-        </p>
         <a class="text-link" href={`mailto:${profile.email}`}>
-          Get in touch <span aria-hidden="true">↗</span>
+          {profile.email}
         </a>
       </div>
       <div class="footer-bottom">
